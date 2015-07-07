@@ -1,6 +1,6 @@
 # YAML sucks.
 
-| YAML | read from Haskell | read from Python |
+| YAML source | yaml2json.hs | yaml2json.py |
 |---|---|---|
 | << | "\u003c\u003c" | could not determine a constructor for the tag 'tag:yaml.org,2002:merge' in "<stdin>", line 1, column 1 |
 | "<<" | "\u003c\u003c" | "<<" |
