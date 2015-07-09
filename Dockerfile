@@ -7,6 +7,7 @@ RUN apt-get install -y \
     ghc \
     libghc-yaml-dev \
     libyaml-perl \
+    libyaml-syck-perl \
     python3 \
     python3-yaml
 
@@ -15,6 +16,7 @@ ADD run.sh /app/
 
 ADD yaml2json.hs /app/
 ADD yaml2json.pl /app/
+ADD yaml-syck2json.pl /app/
 ADD yaml2json.py /app/
 
 WORKDIR /app
