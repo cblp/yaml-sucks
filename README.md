@@ -7,3 +7,4 @@
 | <<: {} | {} | {} | {"<<":{}} |
 | "<<": {} | {} | {"<<": {}} | {"<<":{}} |
 | <<: a | {"\u003c\u003c":"a"} | while constructing a mapping in "<stdin>", line 1, column 1 expected a mapping or list of mappings for merging, but found scalar in "<stdin>", line 1, column 5 | {"<<":"a"} |
+| - 8 - 08 | [8,8] | [8, "08"] | ["8"] |
