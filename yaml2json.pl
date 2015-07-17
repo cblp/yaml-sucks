@@ -8,6 +8,6 @@ use JSON::PP;
 use YAML;
 
 eval {
-    say encode_json Load <>;
+    say encode_json Load join '', <>;
 };
 say $@ if $@;
