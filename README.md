@@ -9,4 +9,5 @@
 | "<<": {} | {} | {"<<": {}} | {"<<":{}} |
 | <<: a | {"\u003c\u003c":"a"} | while constructing a mapping<br>  in "<stdin>", line 1, column 1<br>expected a mapping or list of mappings for merging, but found scalar<br>  in "<stdin>", line 1, column 5 | {"<<":"a"} |
 | - null<br>- false<br>- n<br>- off | [null,false,false,false] | [null, false, "n", false] | ["null","false","n","off"] |
+| - 1_000_000 | ["1_000_000"] | [1000000] | ["1_000_000"] |
 | - 8<br>- 08 | [8,8] | [8, "08"] | ["8","08"] |
