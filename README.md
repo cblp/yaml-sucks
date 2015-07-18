@@ -7,5 +7,5 @@
 | <<: {} | {} | {} | {"<<":{}} |
 | "<<": {} | {} | {"<<": {}} | {"<<":{}} |
 | <<: a | {"\u003c\u003c":"a"} | while constructing a mapping<br>  in "<stdin>", line 1, column 1<br>expected a mapping or list of mappings for merging, but found scalar<br>  in "<stdin>", line 1, column 5 | {"<<":"a"} |
-| - undefined<br>- null<br>- false<br>- true<br>- n<br>- y<br>- off<br>- on | ["undefined",null,false,true,false,true,false,true] | ["undefined", null, false, true, "n", "y", false, true] | ["undefined","null","false","true","n","y","off","on"] |
+| - null<br>- false<br>- n<br>- off | [null,false,false,false] | [null, false, "n", false] | ["null","false","n","off"] |
 | - 8<br>- 08 | [8,8] | [8, "08"] | ["8","08"] |
