@@ -12,13 +12,13 @@ function run {
     $prog < $input > $out_file 2> $err_file ||:
     (   if [ -s $err_file ]; then
             echo ':x:'
-            echo '```'
+            echo -n '<pre><code>'
             cat $err_file
-            echo '```'
+            echo -n '</code></pre>'
         else
-            echo '```'
+            echo -n '<pre><code>'
             cat $out_file
-            echo '```'
+            echo -n '</code></pre>'
         fi
     )
 }

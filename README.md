@@ -9,213 +9,133 @@
 </tr>
 <tr>
 <td>
-```
-- null
+<pre><code>- null
 - false
 - n
 - off
-```
-</td><td>
-```
-[null,false,false,false]
-```
-</td><td>
-```
-[null, false, "n", false]
-```
-</td><td>
-```
-["null","false","n","off"]
-```
-</td>
+</code></pre></td><td>
+<pre><code>[null,false,false,false]
+</code></pre></td><td>
+<pre><code>[null, false, "n", false]
+</code></pre></td><td>
+<pre><code>["null","false","n","off"]
+</code></pre></td>
 </tr>
 <tr>
 <td>
-```
-```
-</td><td>
+<pre><code></code></pre></td><td>
 :x:
-```
-UnexpectedEvent {_received = Nothing, _expected = Just EventStreamStart}
-```
-</td><td>
-```
-null
-```
-</td><td>
-```
-hash- or arrayref expected (not a simple scalar, use allow_nonref to allow this) at ./yaml2json.pl line 11.
+<pre><code>UnexpectedEvent {_received = Nothing, _expected = Just EventStreamStart}
+</code></pre></td><td>
+<pre><code>null
+</code></pre></td><td>
+<pre><code>hash- or arrayref expected (not a simple scalar, use allow_nonref to allow this) at ./yaml2json.pl line 11.
 
-```
-</td>
+</code></pre></td>
 </tr>
 <tr>
 <td>
-```
-<<
-```
-</td><td>
-```
-"\u003c\u003c"
-```
-</td><td>
+<pre><code><<
+</code></pre></td><td>
+<pre><code>"\u003c\u003c"
+</code></pre></td><td>
 :x:
-```
-ConstructorError: could not determine a constructor for the tag 'tag:yaml.org,2002:merge'
+<pre><code>ConstructorError: could not determine a constructor for the tag 'tag:yaml.org,2002:merge'
   in "<stdin>", line 1, column 1
-```
-</td><td>
-```
-YAML Error: Expected separator '---'
+</code></pre></td><td>
+<pre><code>YAML Error: Expected separator '---'
    Code: YAML_PARSE_ERR_NO_SEPARATOR
    Line: 1
    Document: 2
  at /usr/share/perl5/YAML/Loader.pm line 80.
 
-```
-</td>
+</code></pre></td>
 </tr>
 <tr>
 <td>
-```
-"<<"
-```
-</td><td>
-```
-"\u003c\u003c"
-```
-</td><td>
-```
-"<<"
-```
-</td><td>
-```
-YAML Error: Expected separator '---'
+<pre><code>"<<"
+</code></pre></td><td>
+<pre><code>"\u003c\u003c"
+</code></pre></td><td>
+<pre><code>"<<"
+</code></pre></td><td>
+<pre><code>YAML Error: Expected separator '---'
    Code: YAML_PARSE_ERR_NO_SEPARATOR
    Line: 1
    Document: 2
  at /usr/share/perl5/YAML/Loader.pm line 80.
 
-```
-</td>
+</code></pre></td>
 </tr>
 <tr>
 <td>
-```
-<<: {}
-```
-</td><td>
-```
-{}
-```
-</td><td>
-```
-{}
-```
-</td><td>
-```
-{"<<":{}}
-```
-</td>
+<pre><code><<: {}
+</code></pre></td><td>
+<pre><code>{}
+</code></pre></td><td>
+<pre><code>{}
+</code></pre></td><td>
+<pre><code>{"<<":{}}
+</code></pre></td>
 </tr>
 <tr>
 <td>
-```
-- <<: {}
-```
-</td><td>
-```
-[{}]
-```
-</td><td>
-```
-[{}]
-```
-</td><td>
-```
-["<<: {}"]
-```
-</td>
+<pre><code>- <<: {}
+</code></pre></td><td>
+<pre><code>[{}]
+</code></pre></td><td>
+<pre><code>[{}]
+</code></pre></td><td>
+<pre><code>["<<: {}"]
+</code></pre></td>
 </tr>
 <tr>
 <td>
-```
-"<<": {}
-```
-</td><td>
-```
-{}
-```
-</td><td>
-```
-{"<<": {}}
-```
-</td><td>
-```
-{"<<":{}}
-```
-</td>
+<pre><code>"<<": {}
+</code></pre></td><td>
+<pre><code>{}
+</code></pre></td><td>
+<pre><code>{"<<": {}}
+</code></pre></td><td>
+<pre><code>{"<<":{}}
+</code></pre></td>
 </tr>
 <tr>
 <td>
-```
-<<: a
-```
-</td><td>
-```
-{"\u003c\u003c":"a"}
-```
-</td><td>
+<pre><code><<: a
+</code></pre></td><td>
+<pre><code>{"\u003c\u003c":"a"}
+</code></pre></td><td>
 :x:
-```
-ConstructorError: while constructing a mapping
+<pre><code>ConstructorError: while constructing a mapping
   in "<stdin>", line 1, column 1
 expected a mapping or list of mappings for merging, but found scalar
   in "<stdin>", line 1, column 5
-```
-</td><td>
-```
-{"<<":"a"}
-```
-</td>
+</code></pre></td><td>
+<pre><code>{"<<":"a"}
+</code></pre></td>
 </tr>
 <tr>
 <td>
-```
-- 1_000_000
-```
-</td><td>
-```
-["1_000_000"]
-```
-</td><td>
-```
-[1000000]
-```
-</td><td>
-```
-["1_000_000"]
-```
-</td>
+<pre><code>- 1_000_000
+</code></pre></td><td>
+<pre><code>["1_000_000"]
+</code></pre></td><td>
+<pre><code>[1000000]
+</code></pre></td><td>
+<pre><code>["1_000_000"]
+</code></pre></td>
 </tr>
 <tr>
 <td>
-```
-- 8
+<pre><code>- 8
 - 08
-```
-</td><td>
-```
-[8,8]
-```
-</td><td>
-```
-[8, "08"]
-```
-</td><td>
-```
-["8","08"]
-```
-</td>
+</code></pre></td><td>
+<pre><code>[8,8]
+</code></pre></td><td>
+<pre><code>[8, "08"]
+</code></pre></td><td>
+<pre><code>["8","08"]
+</code></pre></td>
 </tr>
 </table>
