@@ -12,9 +12,9 @@ function run {
     $prog < $input > $out_file 2> $err_file ||:
     (   if [ -s $err_file ]; then
             echo ':x:'
-            echo -n '<pre><code>'
-            cat $err_file
-            echo -n '</code></pre>'
+            echo -n '<code>'
+            cat $err_file | sed -z 's/\n$//'
+            echo -n '</code>'
         else
             echo -n '<pre><code>'
             cat $out_file

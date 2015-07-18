@@ -25,8 +25,7 @@
 <td>
 <pre><code></code></pre></td><td>
 :x:
-<pre><code>UnexpectedEvent {_received = Nothing, _expected = Just EventStreamStart}
-</code></pre></td><td>
+<code>UnexpectedEvent {_received = Nothing, _expected = Just EventStreamStart}</code></td><td>
 <pre><code>null
 </code></pre></td><td>
 <pre><code>hash- or arrayref expected (not a simple scalar, use allow_nonref to allow this) at ./yaml2json.pl line 11.
@@ -40,9 +39,8 @@
 <pre><code>"\u003c\u003c"
 </code></pre></td><td>
 :x:
-<pre><code>ConstructorError: could not determine a constructor for the tag 'tag:yaml.org,2002:merge'
-  in "<stdin>", line 1, column 1
-</code></pre></td><td>
+<code>ConstructorError: could not determine a constructor for the tag 'tag:yaml.org,2002:merge'
+  in "<stdin>", line 1, column 1</code></td><td>
 <pre><code>YAML Error: Expected separator '---'
    Code: YAML_PARSE_ERR_NO_SEPARATOR
    Line: 1
@@ -107,11 +105,10 @@
 <pre><code>{"\u003c\u003c":"a"}
 </code></pre></td><td>
 :x:
-<pre><code>ConstructorError: while constructing a mapping
+<code>ConstructorError: while constructing a mapping
   in "<stdin>", line 1, column 1
 expected a mapping or list of mappings for merging, but found scalar
-  in "<stdin>", line 1, column 5
-</code></pre></td><td>
+  in "<stdin>", line 1, column 5</code></td><td>
 <pre><code>{"<<":"a"}
 </code></pre></td>
 </tr>
