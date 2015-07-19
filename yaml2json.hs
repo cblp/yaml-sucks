@@ -11,8 +11,8 @@ import            System.IO                   ( hPutStrLn, stderr )
 
 main :: IO ()
 main = do
-    result <- Yaml.decodeEither `fmap` BS.getContents
-    case result of
+    input <- BS.getContents
+    case Yaml.decodeEither input of
         Right (value :: Json.Value) ->
             BSL.putStrLn $ Json.encode value
         Left errorMessage -> do
