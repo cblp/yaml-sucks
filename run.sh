@@ -23,6 +23,10 @@ function run {
 
 (   echo '# YAML sucks.'
     echo
+    echo "YAML specification is so ambigous,"
+    echo "that you can't be sure if tomorrow you will parse the same data"
+    echo "from YAML file as you have yesterday."
+    echo
     echo '<table>'
         echo '<tr>'
             echo '<th>YAML source</th>'

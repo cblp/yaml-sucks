@@ -1,5 +1,9 @@
 # YAML sucks.
 
+YAML specification is so ambigous,
+that you can't be sure if tomorrow you will parse the same data
+from YAML file as you have yesterday.
+
 <table>
 <tr>
 <th>YAML source</th>
