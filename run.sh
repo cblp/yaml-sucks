@@ -16,7 +16,7 @@ function run {
         else
             echo -n '<pre><code>'
             cat $out_file
-            echo -n '</code></pre>'
+            echo '</code></pre>'
         fi
     )
 }
