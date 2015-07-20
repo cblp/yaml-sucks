@@ -18,7 +18,7 @@
 </code></pre></td><td>
 <pre><code>[null, false, "n", false]
 </code></pre></td><td>
-<pre><code>["null","false","n","off"]
+<pre><code>[null,"","n","off"]
 </code></pre></td>
 </tr>
 <tr>
@@ -43,11 +43,7 @@ UnexpectedEvent {_received = Nothing, _expected = Just EventStreamStart}
 ConstructorError: could not determine a constructor for the tag 'tag:yaml.org,2002:merge'
   in "<stdin>", line 1, column 1
 </td><td>
-<pre><code>YAML Error: Expected separator '---'
-   Code: YAML_PARSE_ERR_NO_SEPARATOR
-   Line: 1
-   Document: 2
- at /usr/share/perl5/YAML/Loader.pm line 80.
+<pre><code>hash- or arrayref expected (not a simple scalar, use allow_nonref to allow this) at ./yaml2json.pl line 11.
 
 </code></pre></td>
 </tr>
@@ -59,11 +55,7 @@ ConstructorError: could not determine a constructor for the tag 'tag:yaml.org,20
 </code></pre></td><td>
 <pre><code>"<<"
 </code></pre></td><td>
-<pre><code>YAML Error: Expected separator '---'
-   Code: YAML_PARSE_ERR_NO_SEPARATOR
-   Line: 1
-   Document: 2
- at /usr/share/perl5/YAML/Loader.pm line 80.
+<pre><code>hash- or arrayref expected (not a simple scalar, use allow_nonref to allow this) at ./yaml2json.pl line 11.
 
 </code></pre></td>
 </tr>
@@ -86,7 +78,7 @@ ConstructorError: could not determine a constructor for the tag 'tag:yaml.org,20
 </code></pre></td><td>
 <pre><code>[{}]
 </code></pre></td><td>
-<pre><code>["<<: {}"]
+<pre><code>[{"<<":{}}]
 </code></pre></td>
 </tr>
 <tr>
