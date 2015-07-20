@@ -47,17 +47,6 @@ ConstructorError: could not determine a constructor for the tag 'tag:yaml.org,20
 </tr>
 <tr>
 <td>
-<pre><code>"<<"
-</code></pre></td><td>
-<pre><code>"\u003c\u003c"
-</code></pre></td><td>
-<pre><code>"<<"
-</code></pre></td><td>
-<pre><code>"<<"
-</code></pre></td>
-</tr>
-<tr>
-<td>
 <pre><code><<: {}
 </code></pre></td><td>
 <pre><code>{}
@@ -65,17 +54,6 @@ ConstructorError: could not determine a constructor for the tag 'tag:yaml.org,20
 <pre><code>{}
 </code></pre></td><td>
 <pre><code>{"<<":{}}
-</code></pre></td>
-</tr>
-<tr>
-<td>
-<pre><code>- <<: {}
-</code></pre></td><td>
-<pre><code>[{}]
-</code></pre></td><td>
-<pre><code>[{}]
-</code></pre></td><td>
-<pre><code>[{"<<":{}}]
 </code></pre></td>
 </tr>
 <tr>
