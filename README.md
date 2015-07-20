@@ -84,19 +84,18 @@ expected a mapping or list of mappings for merging, but found scalar
 </tr>
 <tr>
 <td>
-<pre><code>- 1_000_000
+<pre><code>1_000_000
 </code></pre></td><td>
-<pre><code>["1_000_000"]
+<pre><code>"1_000_000"
 </code></pre></td><td>
-<pre><code>[1000000]
+<pre><code>1000000
 </code></pre></td><td>
-<pre><code>["1_000_000"]
+<pre><code>"1_000_000"
 </code></pre></td>
 </tr>
 <tr>
 <td>
-<pre><code>- 8
-- 08
+<pre><code>[8, 08]
 </code></pre></td><td>
 <pre><code>[8,8]
 </code></pre></td><td>
