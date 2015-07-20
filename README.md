@@ -4,8 +4,9 @@
 <tr>
 <th>YAML source</th>
 <th>yaml2json.hs</th>
-<th>yaml2json.py</th>
 <th>yaml2json.pl</th>
+<th>yaml2json.py</th>
+<th>yaml2json.rb</th>
 </tr>
 <tr>
 <td>
@@ -17,10 +18,13 @@
 <pre><code>[false,false,false]
 </code></pre>
 </td><td>
+<pre><code>["","n","off"]
+</code></pre>
+</td><td>
 <pre><code>[false, "n", false]
 </code></pre>
 </td><td>
-<pre><code>["","n","off"]
+<pre><code>[false,"n",false]
 </code></pre>
 </td>
 </tr>
@@ -36,6 +40,9 @@ yaml2json.hs: UnexpectedEvent {_received = Nothing, _expected = Just EventStream
 </td><td>
 <pre><code>null
 </code></pre>
+</td><td>
+<pre><code>false
+</code></pre>
 </td>
 </tr>
 <tr>
@@ -44,6 +51,9 @@ yaml2json.hs: UnexpectedEvent {_received = Nothing, _expected = Just EventStream
 </code></pre>
 </td><td>
 <pre><code>"\u003c\u003c"
+</code></pre>
+</td><td>
+<pre><code>"<<"
 </code></pre>
 </td><td>
 :x:
@@ -62,6 +72,9 @@ ConstructorError: could not determine a constructor for the tag 'tag:yaml.org,20
 <pre><code>{}
 </code></pre>
 </td><td>
+<pre><code>{"<<":{}}
+</code></pre>
+</td><td>
 <pre><code>{}
 </code></pre>
 </td><td>
@@ -77,6 +90,9 @@ ConstructorError: could not determine a constructor for the tag 'tag:yaml.org,20
 <pre><code>{}
 </code></pre>
 </td><td>
+<pre><code>{"<<":{}}
+</code></pre>
+</td><td>
 <pre><code>{"<<": {}}
 </code></pre>
 </td><td>
@@ -90,6 +106,9 @@ ConstructorError: could not determine a constructor for the tag 'tag:yaml.org,20
 </code></pre>
 </td><td>
 <pre><code>{"\u003c\u003c":"a"}
+</code></pre>
+</td><td>
+<pre><code>{"<<":"a"}
 </code></pre>
 </td><td>
 :x:
@@ -111,10 +130,13 @@ expected a mapping or list of mappings for merging, but found scalar
 <pre><code>[1000,"1_000"]
 </code></pre>
 </td><td>
+<pre><code>["1000","1_000"]
+</code></pre>
+</td><td>
 <pre><code>[1000, 1000]
 </code></pre>
 </td><td>
-<pre><code>["1000","1_000"]
+<pre><code>[1000,1000]
 </code></pre>
 </td>
 </tr>
@@ -126,10 +148,13 @@ expected a mapping or list of mappings for merging, but found scalar
 <pre><code>[8,8]
 </code></pre>
 </td><td>
+<pre><code>["8","08"]
+</code></pre>
+</td><td>
 <pre><code>[8, "08"]
 </code></pre>
 </td><td>
-<pre><code>["8","08"]
+<pre><code>[8,"08"]
 </code></pre>
 </td>
 </tr>

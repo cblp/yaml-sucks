@@ -27,8 +27,9 @@ function run {
         echo '<tr>'
             echo '<th>YAML source</th>'
             echo '<th>yaml2json.hs</th>'
-            echo '<th>yaml2json.py</th>'
             echo '<th>yaml2json.pl</th>'
+            echo '<th>yaml2json.py</th>'
+            echo '<th>yaml2json.rb</th>'
         echo '</tr>'
         for input in inputs/*.yaml; do
             echo '<tr>'
@@ -37,9 +38,11 @@ function run {
                 echo '</td><td>'
                     run ./yaml2json.hs $input
                 echo '</td><td>'
+                    run ./yaml2json.pl $input
+                echo '</td><td>'
                     run ./yaml2json.py $input
                 echo '</td><td>'
-                    run ./yaml2json.pl $input
+                    run ./yaml2json.rb $input
                 echo '</td>'
             echo '</tr>'
         done
