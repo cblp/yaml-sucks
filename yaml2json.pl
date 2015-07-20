@@ -7,4 +7,4 @@ use feature 'say';
 use JSON::PP;
 use YAML::XS;
 
-say encode_json Load join '', <>;
+say JSON::PP->new->allow_nonref->encode(Load join '', <>);
