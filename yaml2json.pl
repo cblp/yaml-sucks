@@ -7,7 +7,4 @@ use feature 'say';
 use JSON::PP;
 use YAML::XS;
 
-eval {
-    say encode_json Load join '', <>;
-};
-say $@ if $@;
+say encode_json Load join '', <>;

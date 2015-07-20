@@ -29,9 +29,9 @@ UnexpectedEvent {_received = Nothing, _expected = Just EventStreamStart}
 </td><td>
 <pre><code>null
 </code></pre></td><td>
-<pre><code>hash- or arrayref expected (not a simple scalar, use allow_nonref to allow this) at ./yaml2json.pl line 11.
-
-</code></pre></td>
+:x:
+hash- or arrayref expected (not a simple scalar, use allow_nonref to allow this) at ./yaml2json.pl line 10.
+</td>
 </tr>
 <tr>
 <td>
@@ -43,9 +43,9 @@ UnexpectedEvent {_received = Nothing, _expected = Just EventStreamStart}
 ConstructorError: could not determine a constructor for the tag 'tag:yaml.org,2002:merge'
   in "<stdin>", line 1, column 1
 </td><td>
-<pre><code>hash- or arrayref expected (not a simple scalar, use allow_nonref to allow this) at ./yaml2json.pl line 11.
-
-</code></pre></td>
+:x:
+hash- or arrayref expected (not a simple scalar, use allow_nonref to allow this) at ./yaml2json.pl line 10.
+</td>
 </tr>
 <tr>
 <td>
@@ -55,9 +55,9 @@ ConstructorError: could not determine a constructor for the tag 'tag:yaml.org,20
 </code></pre></td><td>
 <pre><code>"<<"
 </code></pre></td><td>
-<pre><code>hash- or arrayref expected (not a simple scalar, use allow_nonref to allow this) at ./yaml2json.pl line 11.
-
-</code></pre></td>
+:x:
+hash- or arrayref expected (not a simple scalar, use allow_nonref to allow this) at ./yaml2json.pl line 10.
+</td>
 </tr>
 <tr>
 <td>
