@@ -29,7 +29,7 @@
 <pre><code></code></pre>
 </td><td>
 :x:
-UnexpectedEvent {_received = Nothing, _expected = Just EventStreamStart}
+yaml2json.hs: UnexpectedEvent {_received = Nothing, _expected = Just EventStreamStart}
 </td><td>
 <pre><code>null
 </code></pre>
