@@ -21,16 +21,7 @@ function run {
     )
 }
 
-(   echo '# YAML sucks.'
-    echo
-    echo "YAML specification is so ambigous,"
-    echo "that you can't be sure if tomorrow you will parse the same data"
-    echo "from YAML file as you have yesterday."
-    echo
-    echo "Let's see how different implementations parse YAML code."
-    echo "Settings are default or near to default or typical for that language."
-    echo "We use JSON to represent data the uniform way."
-    echo
+(   cat preamble.md
     echo '<table>'
         echo '<tr>'
             echo '<th>YAML source</th>'
