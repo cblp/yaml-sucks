@@ -9,16 +9,15 @@
 </tr>
 <tr>
 <td>
-<pre><code>- null
-- false
+<pre><code>- false
 - n
 - off
 </code></pre></td><td>
-<pre><code>[null,false,false,false]
+<pre><code>[false,false,false]
 </code></pre></td><td>
-<pre><code>[null, false, "n", false]
+<pre><code>[false, "n", false]
 </code></pre></td><td>
-<pre><code>[null,"","n","off"]
+<pre><code>["","n","off"]
 </code></pre></td>
 </tr>
 <tr>
