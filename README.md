@@ -54,6 +54,24 @@ yaml2json.hs: UnexpectedEvent {_received = Nothing, _expected = Just EventStream
 </tr>
 <tr>
 <td>
+<pre><code>0xC
+</code></pre>
+</td><td>
+<pre><code>"0xC"
+</code></pre>
+</td><td>
+<pre><code>"0xC"
+</code></pre>
+</td><td>
+<pre><code>12
+</code></pre>
+</td><td>
+<pre><code>12
+</code></pre>
+</td>
+</tr>
+<tr>
+<td>
 <pre><code><<
 </code></pre>
 </td><td>
@@ -131,37 +149,38 @@ expected a mapping or list of mappings for merging, but found scalar
 <tr>
 <td>
 <pre><code>- 1000
+- +1000
 - 1_000
 </code></pre>
 </td><td>
-<pre><code>[1000,"1_000"]
+<pre><code>[1000,1000,"1_000"]
 </code></pre>
 </td><td>
-<pre><code>["1000","1_000"]
+<pre><code>["1000","+1000","1_000"]
 </code></pre>
 </td><td>
-<pre><code>[1000, 1000]
+<pre><code>[1000, 1000, 1000]
 </code></pre>
 </td><td>
-<pre><code>[1000,1000]
+<pre><code>[1000,1000,1000]
 </code></pre>
 </td>
 </tr>
 <tr>
 <td>
-<pre><code>[8, 08]
+<pre><code>[8, 08, 0o10]
 </code></pre>
 </td><td>
-<pre><code>[8,8]
+<pre><code>[8,8,"0o10"]
 </code></pre>
 </td><td>
-<pre><code>["8","08"]
+<pre><code>["8","08","0o10"]
 </code></pre>
 </td><td>
-<pre><code>[8, "08"]
+<pre><code>[8, "08", "0o10"]
 </code></pre>
 </td><td>
-<pre><code>[8,"08"]
+<pre><code>[8,"08","0o10"]
 </code></pre>
 </td>
 </tr>
