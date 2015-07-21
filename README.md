@@ -54,6 +54,28 @@ yaml2json.hs: UnexpectedEvent {_received = Nothing, _expected = Just EventStream
 </tr>
 <tr>
 <td>
+<pre><code>- 1.23015e+3
+- 12.3015e+02
+- 1230.15
+- -.inf
+- .NaN
+</code></pre>
+</td><td>
+<pre><code>[1230.15,1230.15,1230.15,"-.inf",".NaN"]
+</code></pre>
+</td><td>
+<pre><code>["1.23015e+3","12.3015e+02","1230.15","-.inf",".NaN"]
+</code></pre>
+</td><td>
+<pre><code>[1230.15, 1230.15, 1230.15, -Infinity, NaN]
+</code></pre>
+</td><td>
+<pre><code>[1230.15,1230.15,1230.15,-Infinity,NaN]
+</code></pre>
+</td>
+</tr>
+<tr>
+<td>
 <pre><code>0xC
 </code></pre>
 </td><td>
