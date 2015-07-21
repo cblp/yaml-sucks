@@ -165,4 +165,22 @@ expected a mapping or list of mappings for merging, but found scalar
 </code></pre>
 </td>
 </tr>
+<tr>
+<td>
+<pre><code>"Sosa did fine.\u263A"
+</code></pre>
+</td><td>
+<pre><code>"Sosa did fine.☺"
+</code></pre>
+</td><td>
+:x:
+Wide character in say at ./yaml2json.pl line 10, <> line 1.
+</td><td>
+<pre><code>"Sosa did fine.\u263a"
+</code></pre>
+</td><td>
+<pre><code>"Sosa did fine.☺"
+</code></pre>
+</td>
+</tr>
 </table>
