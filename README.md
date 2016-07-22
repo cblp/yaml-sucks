@@ -194,19 +194,19 @@ expected a mapping or list of mappings for merging, but found scalar
 </tr>
 <tr>
 <td>
-<pre><code class=''>[8, 08, 0o10]
+<pre><code class=''>[8, 08, 0o10, 010]
 </code></pre>
 </td><td>
-<pre><code class='haskell'>[8,8,"0o10"]
+<pre><code class='haskell'>[8,8,"0o10",10]
 </code></pre>
 </td><td>
-<pre><code class='perl'>["8","08","0o10"]
+<pre><code class='perl'>["8","08","0o10","010"]
 </code></pre>
 </td><td>
-<pre><code class='python'>[8, "08", "0o10"]
+<pre><code class='python'>[8, "08", "0o10", 8]
 </code></pre>
 </td><td>
-<pre><code class='ruby'>[8,"08","0o10"]
+<pre><code class='ruby'>[8,"08","0o10",8]
 </code></pre>
 </td>
 </tr>
