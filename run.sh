@@ -16,8 +16,7 @@ function run {
             # cat $err_file >&2
             cat $err_file
         else
-            # TODO echo -n "<pre><code class='$language'>"
-            echo -n '<pre><code>'
+            echo -n "<pre><code class='$language'>"
             cat $out_file
             echo '</code></pre>'
         fi
