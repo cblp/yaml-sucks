@@ -40,7 +40,11 @@ We use JSON to represent data the uniform way.
 <pre><code></code></pre>
 </td><td>
 :x:
-yaml2json.hs: UnexpectedEvent {_received = Nothing, _expected = Just EventStreamStart}
+yaml2json.hs: Unexpected event: expected
+  Nothing
+but received
+  Just EventStreamStart
+
 </td><td>
 <pre><code>null
 </code></pre>
@@ -97,7 +101,7 @@ yaml2json.hs: UnexpectedEvent {_received = Nothing, _expected = Just EventStream
 <pre><code><<
 </code></pre>
 </td><td>
-<pre><code>"\u003c\u003c"
+<pre><code>"<<"
 </code></pre>
 </td><td>
 <pre><code>"<<"
@@ -125,7 +129,7 @@ ConstructorError: could not determine a constructor for the tag 'tag:yaml.org,20
 <pre><code>{}
 </code></pre>
 </td><td>
-<pre><code>{"<<":{}}
+<pre><code>{}
 </code></pre>
 </td>
 </tr>
@@ -143,7 +147,7 @@ ConstructorError: could not determine a constructor for the tag 'tag:yaml.org,20
 <pre><code>{"<<": {}}
 </code></pre>
 </td><td>
-<pre><code>{"<<":{}}
+<pre><code>{}
 </code></pre>
 </td>
 </tr>
@@ -152,7 +156,7 @@ ConstructorError: could not determine a constructor for the tag 'tag:yaml.org,20
 <pre><code><<: a
 </code></pre>
 </td><td>
-<pre><code>{"\u003c\u003c":"a"}
+<pre><code>{"<<":"a"}
 </code></pre>
 </td><td>
 <pre><code>{"<<":"a"}

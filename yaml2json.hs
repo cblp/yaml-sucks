@@ -2,10 +2,10 @@
 {-# OPTIONS -Wall -Werror #-}
 {-# LANGUAGE ScopedTypeVariables #-}
 
-import qualified  Data.Aeson                  as Json
-import qualified  Data.ByteString             as BS
-import qualified  Data.ByteString.Lazy.Char8  as BSL
-import qualified  Data.Yaml                   as Yaml
+import qualified Data.Aeson                 as Json
+import qualified Data.ByteString            as BS
+import qualified Data.ByteString.Lazy.Char8 as BSL
+import qualified Data.Yaml                  as Yaml
 
 main :: IO ()
 main = do

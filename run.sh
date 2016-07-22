@@ -3,8 +3,9 @@ set -eu
 set -o pipefail
 
 function run {
-    prog="$1"
-    input="$2"
+    language="$1"
+    prog="$2"
+    input="$3"
 
     out_file="/tmp/yaml-sucks.out.json"
     err_file="/tmp/yaml-sucks.err.txt"
@@ -12,8 +13,10 @@ function run {
     $prog < $input > $out_file 2> $err_file ||:
     (   if [ -s $err_file ]; then
             echo ':x:'
+            # cat $err_file >&2
             cat $err_file
         else
+            # TODO echo -n "<pre><code class='$language'>"
             echo -n '<pre><code>'
             cat $out_file
             echo '</code></pre>'
@@ -33,15 +36,15 @@ function run {
         for input in inputs/*.yaml; do
             echo '<tr>'
                 echo '<td>'
-                    run cat $input
+                    run '' cat $input
                 echo '</td><td>'
-                    run ./yaml2json.hs $input
+                    run haskell ./yaml2json.hs $input
                 echo '</td><td>'
-                    run ./yaml2json.pl $input
+                    run perl ./yaml2json.pl $input
                 echo '</td><td>'
-                    run ./yaml2json.py $input
+                    run python ./yaml2json.py $input
                 echo '</td><td>'
-                    run ./yaml2json.rb $input
+                    run ruby ./yaml2json.rb $input
                 echo '</td>'
             echo '</tr>'
         done
