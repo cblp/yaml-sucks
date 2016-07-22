@@ -58,23 +58,40 @@ but received
 </tr>
 <tr>
 <td>
-<pre><code class=''>- 1.23015e+3
-- 12.3015e+02
-- 1230.15
-- -.inf
+<pre><code class=''>- -.inf
 - .NaN
 </code></pre>
 </td><td>
-<pre><code class='haskell'>[1230.15,1230.15,1230.15,"-.inf",".NaN"]
+<pre><code class='haskell'>["-.inf",".NaN"]
 </code></pre>
 </td><td>
-<pre><code class='perl'>["1.23015e+3","12.3015e+02","1230.15","-.inf",".NaN"]
+<pre><code class='perl'>["-.inf",".NaN"]
 </code></pre>
 </td><td>
-<pre><code class='python'>[1230.15, 1230.15, 1230.15, -Infinity, NaN]
+<pre><code class='python'>[-Infinity, NaN]
 </code></pre>
 </td><td>
-<pre><code class='ruby'>[1230.15,1230.15,1230.15,-Infinity,NaN]
+<pre><code class='ruby'>[-Infinity,NaN]
+</code></pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre><code class=''>- 1.23015e+3
+- 12.3015e+02
+- 1230.15
+</code></pre>
+</td><td>
+<pre><code class='haskell'>[1230.15,1230.15,1230.15]
+</code></pre>
+</td><td>
+<pre><code class='perl'>["1.23015e+3","12.3015e+02","1230.15"]
+</code></pre>
+</td><td>
+<pre><code class='python'>[1230.15, 1230.15, 1230.15]
+</code></pre>
+</td><td>
+<pre><code class='ruby'>[1230.15,1230.15,1230.15]
 </code></pre>
 </td>
 </tr>
