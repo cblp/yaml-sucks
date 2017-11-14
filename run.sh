@@ -31,6 +31,7 @@ function run {
             echo '<th>yaml2json.pl</th>'
             echo '<th>yaml2json.py</th>'
             echo '<th>yaml2json.rb</th>'
+            echo '<th>rq</th>'
         echo '</tr>'
         for input in inputs/*.yaml; do
             echo '<tr>'
@@ -44,6 +45,8 @@ function run {
                     run python ./yaml2json.py $input
                 echo '</td><td>'
                     run ruby ./yaml2json.rb $input
+                echo '</td><td>'
+                    run '' 'rq -y -J --format compact' $input
                 echo '</td>'
             echo '</tr>'
         done
