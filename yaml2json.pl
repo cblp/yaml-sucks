@@ -3,6 +3,7 @@
 use strict;
 use warnings;
 use feature 'say';
+binmode(STDOUT, ':utf8');
 
 use JSON::PP;
 use YAML::XS;
