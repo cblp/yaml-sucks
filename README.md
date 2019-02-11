@@ -41,6 +41,29 @@ We use JSON to represent data the uniform way.
 </tr>
 <tr>
 <td>
+<pre><code class=''>- 0:00
+- 01:00
+- 12:34
+</code></pre>
+</td><td>
+<pre><code class='haskell'>["0:00","01:00","12:34"]
+</code></pre>
+</td><td>
+<pre><code class='perl'>["0:00","01:00","12:34"]
+</code></pre>
+</td><td>
+<pre><code class='python'>["0:00", "01:00", 754]
+</code></pre>
+</td><td>
+<pre><code class='ruby'>[0,3600,45240]
+</code></pre>
+</td><td>
+<pre><code class=''>["0:00","01:00","12:34"]
+</code></pre>
+</td>
+</tr>
+<tr>
+<td>
 <pre><code class=''></code></pre>
 </td><td>
 :x:
