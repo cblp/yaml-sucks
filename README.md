@@ -41,10 +41,33 @@ We use JSON to represent data the uniform way.
 </tr>
 <tr>
 <td>
+<pre><code class=''>- 0:00
+- 01:00
+- 12:34
+</code></pre>
+</td><td>
+<pre><code class='haskell'>["0:00","01:00","12:34"]
+</code></pre>
+</td><td>
+<pre><code class='perl'>["0:00","01:00","12:34"]
+</code></pre>
+</td><td>
+<pre><code class='python'>["0:00", "01:00", 754]
+</code></pre>
+</td><td>
+<pre><code class='ruby'>[0,3600,45240]
+</code></pre>
+</td><td>
+<pre><code class=''>["0:00","01:00","12:34"]
+</code></pre>
+</td>
+</tr>
+<tr>
+<td>
 <pre><code class=''></code></pre>
 </td><td>
-:x:
-yaml2json.hs: UnexpectedEvent {_received = Nothing, _expected = Just EventStreamStart}
+<pre><code class='haskell'>null
+</code></pre>
 </td><td>
 <pre><code class='perl'>null
 </code></pre>
@@ -52,13 +75,12 @@ yaml2json.hs: UnexpectedEvent {_received = Nothing, _expected = Just EventStream
 <pre><code class='python'>null
 </code></pre>
 </td><td>
-:x:
-/usr/lib/ruby/1.9.1/json/common.rb:216:in `generate': only generation of JSON objects or arrays allowed (JSON::GeneratorError)
-	from /usr/lib/ruby/1.9.1/json/common.rb:216:in `generate'
-	from /usr/lib/ruby/1.9.1/json/common.rb:352:in `dump'
-	from ./yaml2json.rb:6:in `<main>'
+<pre><code class='ruby'>false
+</code></pre>
 </td><td>
-<pre><code class=''></code></pre>
+:x:
+[ERROR] [rq] Encountered: EOF while parsing a value
+[ERROR] [rq] (Re-run with --trace or RUST_BACKTRACE=1 for a backtrace)
 </td>
 </tr>
 <tr>
@@ -120,11 +142,8 @@ yaml2json.hs: UnexpectedEvent {_received = Nothing, _expected = Just EventStream
 <pre><code class='python'>12
 </code></pre>
 </td><td>
-:x:
-/usr/lib/ruby/1.9.1/json/common.rb:216:in `generate': only generation of JSON objects or arrays allowed (JSON::GeneratorError)
-	from /usr/lib/ruby/1.9.1/json/common.rb:216:in `generate'
-	from /usr/lib/ruby/1.9.1/json/common.rb:352:in `dump'
-	from ./yaml2json.rb:6:in `<main>'
+<pre><code class='ruby'>12
+</code></pre>
 </td><td>
 <pre><code class=''>12
 </code></pre>
@@ -135,7 +154,7 @@ yaml2json.hs: UnexpectedEvent {_received = Nothing, _expected = Just EventStream
 <pre><code class=''><<
 </code></pre>
 </td><td>
-<pre><code class='haskell'>"\u003c\u003c"
+<pre><code class='haskell'>"<<"
 </code></pre>
 </td><td>
 <pre><code class='perl'>"<<"
@@ -145,11 +164,8 @@ yaml2json.hs: UnexpectedEvent {_received = Nothing, _expected = Just EventStream
 ConstructorError: could not determine a constructor for the tag 'tag:yaml.org,2002:merge'
   in "<stdin>", line 1, column 1
 </td><td>
-:x:
-/usr/lib/ruby/1.9.1/json/common.rb:216:in `generate': only generation of JSON objects or arrays allowed (JSON::GeneratorError)
-	from /usr/lib/ruby/1.9.1/json/common.rb:216:in `generate'
-	from /usr/lib/ruby/1.9.1/json/common.rb:352:in `dump'
-	from ./yaml2json.rb:6:in `<main>'
+<pre><code class='ruby'>"<<"
+</code></pre>
 </td><td>
 <pre><code class=''>"<<"
 </code></pre>
@@ -169,7 +185,7 @@ ConstructorError: could not determine a constructor for the tag 'tag:yaml.org,20
 <pre><code class='python'>{}
 </code></pre>
 </td><td>
-<pre><code class='ruby'>{"<<":{}}
+<pre><code class='ruby'>{}
 </code></pre>
 </td><td>
 <pre><code class=''>{"<<":{}}
@@ -190,7 +206,7 @@ ConstructorError: could not determine a constructor for the tag 'tag:yaml.org,20
 <pre><code class='python'>{"<<": {}}
 </code></pre>
 </td><td>
-<pre><code class='ruby'>{"<<":{}}
+<pre><code class='ruby'>{}
 </code></pre>
 </td><td>
 <pre><code class=''>{"<<":{}}
@@ -202,7 +218,7 @@ ConstructorError: could not determine a constructor for the tag 'tag:yaml.org,20
 <pre><code class=''><<: a
 </code></pre>
 </td><td>
-<pre><code class='haskell'>{"\u003c\u003c":"a"}
+<pre><code class='haskell'>{"<<":"a"}
 </code></pre>
 </td><td>
 <pre><code class='perl'>{"<<":"a"}
@@ -237,10 +253,10 @@ b:
 <pre><code class='haskell'>{"a":{"k2":"v2","k1":"v1"},"b":{"k3":"v3","k2":"v2","k1":"override"}}
 </code></pre>
 </td><td>
-<pre><code class='perl'>{"b":{"k1":"override","<<":{"k1":"v1","k2":"v2"},"k3":"v3"},"a":{"k1":"v1","k2":"v2"}}
+<pre><code class='perl'>{"a":{"k2":"v2","k1":"v1"},"b":{"k3":"v3","k1":"override","<<":{"k2":"v2","k1":"v1"}}}
 </code></pre>
 </td><td>
-<pre><code class='python'>{"a": {"k2": "v2", "k1": "v1"}, "b": {"k3": "v3", "k2": "v2", "k1": "override"}}
+<pre><code class='python'>{"a": {"k1": "v1", "k2": "v2"}, "b": {"k1": "override", "k2": "v2", "k3": "v3"}}
 </code></pre>
 </td><td>
 <pre><code class='ruby'>{"a":{"k1":"v1","k2":"v2"},"b":{"k1":"override","k2":"v2","k3":"v3"}}
@@ -287,7 +303,7 @@ b:
 <pre><code class='python'>[8, "08", "0o10", 8]
 </code></pre>
 </td><td>
-<pre><code class='ruby'>[8,"08",8,8]
+<pre><code class='ruby'>[8,"08","0o10",8]
 </code></pre>
 </td><td>
 <pre><code class=''>[8,8,8,10]
@@ -302,17 +318,14 @@ b:
 <pre><code class='haskell'>"Sosa did fine.☺"
 </code></pre>
 </td><td>
-:x:
-Wide character in say at ./yaml2json.pl line 10, <> line 1.
+<pre><code class='perl'>"Sosa did fine.☺"
+</code></pre>
 </td><td>
 <pre><code class='python'>"Sosa did fine.\u263a"
 </code></pre>
 </td><td>
-:x:
-/usr/lib/ruby/1.9.1/json/common.rb:216:in `generate': only generation of JSON objects or arrays allowed (JSON::GeneratorError)
-	from /usr/lib/ruby/1.9.1/json/common.rb:216:in `generate'
-	from /usr/lib/ruby/1.9.1/json/common.rb:352:in `dump'
-	from ./yaml2json.rb:6:in `<main>'
+<pre><code class='ruby'>"Sosa did fine.☺"
+</code></pre>
 </td><td>
 <pre><code class=''>"Sosa did fine.☺"
 </code></pre>
