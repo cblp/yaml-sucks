@@ -41,6 +41,27 @@ We use JSON to represent data the uniform way.
 </tr>
 <tr>
 <td>
+<pre><code class=''>no: "foo"
+</code></pre>
+</td><td>
+<pre><code class='haskell'>{"no":"foo"}
+</code></pre>
+</td><td>
+<pre><code class='perl'>{"no":"foo"}
+</code></pre>
+</td><td>
+<pre><code class='python'>{"false": "foo"}
+</code></pre>
+</td><td>
+<pre><code class='ruby'>{"false":"foo"}
+</code></pre>
+</td><td>
+<pre><code class=''>{"no":"foo"}
+</code></pre>
+</td>
+</tr>
+<tr>
+<td>
 <pre><code class=''>- 0:00
 - 01:00
 - 12:34
