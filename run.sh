@@ -46,7 +46,7 @@ function run {
                 echo '</td><td>'
                     run ruby ./yaml2json.rb $input
                 echo '</td><td>'
-                    run '' 'rq -y -J --format compact' $input
+                    run '' 'rq -y -J --format indented' $input
                 echo '</td>'
             echo '</tr>'
         done

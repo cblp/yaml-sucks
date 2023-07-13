@@ -8,4 +8,4 @@ binmode(STDOUT, ':utf8');
 use JSON::PP;
 use YAML::XS;
 
-say JSON::PP->new->allow_nonref->encode(Load join '', <>);
+say JSON::PP->new->allow_nonref->pretty->encode(Load join '', <>);
