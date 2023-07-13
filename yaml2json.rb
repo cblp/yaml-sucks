@@ -3,4 +3,4 @@
 require 'json'
 require 'yaml'
 
-puts JSON.dump YAML.load STDIN
+puts JSON.pretty_generate YAML.load STDIN

@@ -1,6 +1,6 @@
 # YAML sucks.
 
-YAML specification is so ambigous,
+YAML specification is so ambiguous,
 that you can't be sure if tomorrow you will parse the same data from YAML file
 as you have yesterday.
 

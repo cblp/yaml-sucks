@@ -1,6 +1,6 @@
 # YAML sucks.
 
-YAML specification is so ambigous,
+YAML specification is so ambiguous,
 that you can't be sure if tomorrow you will parse the same data from YAML file
 as you have yesterday.
 
@@ -23,19 +23,40 @@ We use JSON to represent data the uniform way.
 - off
 </code></pre>
 </td><td>
-<pre><code class='haskell'>[false,false,false]
+<pre><code class='haskell'>[
+    false,
+    false,
+    false
+]
 </code></pre>
 </td><td>
-<pre><code class='perl'>["","n","off"]
+<pre><code class='perl'>[
+   "",
+   "n",
+   "off"
+]
+
 </code></pre>
 </td><td>
-<pre><code class='python'>[false, "n", false]
+<pre><code class='python'>[
+    false,
+    "n",
+    false
+]
 </code></pre>
 </td><td>
-<pre><code class='ruby'>[false,"n",false]
+<pre><code class='ruby'>[
+  false,
+  "n",
+  false
+]
 </code></pre>
 </td><td>
-<pre><code class=''>[false,"n","off"]
+<pre><code class=''>[
+  false,
+  "n",
+  "off"
+]
 </code></pre>
 </td>
 </tr>
@@ -44,19 +65,30 @@ We use JSON to represent data the uniform way.
 <pre><code class=''>no: "foo"
 </code></pre>
 </td><td>
-<pre><code class='haskell'>{"no":"foo"}
+<pre><code class='haskell'>{
+    "no": "foo"
+}
 </code></pre>
 </td><td>
-<pre><code class='perl'>{"no":"foo"}
+<pre><code class='perl'>{
+   "no" : "foo"
+}
+
 </code></pre>
 </td><td>
-<pre><code class='python'>{"false": "foo"}
+<pre><code class='python'>{
+    "false": "foo"
+}
 </code></pre>
 </td><td>
-<pre><code class='ruby'>{"false":"foo"}
+<pre><code class='ruby'>{
+  "false": "foo"
+}
 </code></pre>
 </td><td>
-<pre><code class=''>{"no":"foo"}
+<pre><code class=''>{
+  "no": "foo"
+}
 </code></pre>
 </td>
 </tr>
@@ -67,19 +99,40 @@ We use JSON to represent data the uniform way.
 - 12:34
 </code></pre>
 </td><td>
-<pre><code class='haskell'>["0:00","01:00","12:34"]
+<pre><code class='haskell'>[
+    "0:00",
+    "01:00",
+    "12:34"
+]
 </code></pre>
 </td><td>
-<pre><code class='perl'>["0:00","01:00","12:34"]
+<pre><code class='perl'>[
+   "0:00",
+   "01:00",
+   "12:34"
+]
+
 </code></pre>
 </td><td>
-<pre><code class='python'>["0:00", "01:00", 754]
+<pre><code class='python'>[
+    "0:00",
+    "01:00",
+    754
+]
 </code></pre>
 </td><td>
-<pre><code class='ruby'>[0,3600,45240]
+<pre><code class='ruby'>[
+  0,
+  3600,
+  45240
+]
 </code></pre>
 </td><td>
-<pre><code class=''>["0:00","01:00","12:34"]
+<pre><code class=''>[
+  "0:00",
+  "01:00",
+  "12:34"
+]
 </code></pre>
 </td>
 </tr>
@@ -91,6 +144,7 @@ We use JSON to represent data the uniform way.
 </code></pre>
 </td><td>
 <pre><code class='perl'>null
+
 </code></pre>
 </td><td>
 <pre><code class='python'>null
@@ -100,7 +154,8 @@ We use JSON to represent data the uniform way.
 </code></pre>
 </td><td>
 :x:
-[ERROR] [rq] Encountered: EOF while parsing a value
+[ERROR] [rq] Encountered: YAML error
+[ERROR] [rq] Caused by: EOF while parsing a value
 [ERROR] [rq] (Re-run with --trace or RUST_BACKTRACE=1 for a backtrace)
 </td>
 </tr>
@@ -110,19 +165,34 @@ We use JSON to represent data the uniform way.
 - .NaN
 </code></pre>
 </td><td>
-<pre><code class='haskell'>["-.inf",".NaN"]
+<pre><code class='haskell'>[
+    "-.inf",
+    ".NaN"
+]
 </code></pre>
 </td><td>
-<pre><code class='perl'>["-.inf",".NaN"]
+<pre><code class='perl'>[
+   "-.inf",
+   ".NaN"
+]
+
 </code></pre>
 </td><td>
-<pre><code class='python'>[-Infinity, NaN]
+<pre><code class='python'>[
+    -Infinity,
+    NaN
+]
 </code></pre>
 </td><td>
-<pre><code class='ruby'>[-Infinity,NaN]
-</code></pre>
+:x:
+/usr/lib/ruby/2.5.0/json/common.rb:286:in `generate': 862: -Infinity not allowed in JSON (JSON::GeneratorError)
+	from /usr/lib/ruby/2.5.0/json/common.rb:286:in `pretty_generate'
+	from ./yaml2json.rb:6:in `<main>'
 </td><td>
-<pre><code class=''>["-.inf",".NaN"]
+<pre><code class=''>[
+  null,
+  null
+]
 </code></pre>
 </td>
 </tr>
@@ -133,19 +203,40 @@ We use JSON to represent data the uniform way.
 - 1230.15
 </code></pre>
 </td><td>
-<pre><code class='haskell'>[1230.15,1230.15,1230.15]
+<pre><code class='haskell'>[
+    1230.15,
+    1230.15,
+    1230.15
+]
 </code></pre>
 </td><td>
-<pre><code class='perl'>["1.23015e+3","12.3015e+02","1230.15"]
+<pre><code class='perl'>[
+   "1.23015e+3",
+   "12.3015e+02",
+   "1230.15"
+]
+
 </code></pre>
 </td><td>
-<pre><code class='python'>[1230.15, 1230.15, 1230.15]
+<pre><code class='python'>[
+    1230.15,
+    1230.15,
+    1230.15
+]
 </code></pre>
 </td><td>
-<pre><code class='ruby'>[1230.15,1230.15,1230.15]
+<pre><code class='ruby'>[
+  1230.15,
+  1230.15,
+  1230.15
+]
 </code></pre>
 </td><td>
-<pre><code class=''>[1230.15,1230.15,1230.15]
+<pre><code class=''>[
+  1230.15,
+  1230.15,
+  1230.15
+]
 </code></pre>
 </td>
 </tr>
@@ -158,6 +249,7 @@ We use JSON to represent data the uniform way.
 </code></pre>
 </td><td>
 <pre><code class='perl'>"0xC"
+
 </code></pre>
 </td><td>
 <pre><code class='python'>12
@@ -179,6 +271,7 @@ We use JSON to represent data the uniform way.
 </code></pre>
 </td><td>
 <pre><code class='perl'>"<<"
+
 </code></pre>
 </td><td>
 :x:
@@ -200,16 +293,22 @@ ConstructorError: could not determine a constructor for the tag 'tag:yaml.org,20
 <pre><code class='haskell'>{}
 </code></pre>
 </td><td>
-<pre><code class='perl'>{"<<":{}}
+<pre><code class='perl'>{
+   "<<" : {}
+}
+
 </code></pre>
 </td><td>
 <pre><code class='python'>{}
 </code></pre>
 </td><td>
-<pre><code class='ruby'>{}
+<pre><code class='ruby'>{
+}
 </code></pre>
 </td><td>
-<pre><code class=''>{"<<":{}}
+<pre><code class=''>{
+  "<<": {}
+}
 </code></pre>
 </td>
 </tr>
@@ -221,16 +320,24 @@ ConstructorError: could not determine a constructor for the tag 'tag:yaml.org,20
 <pre><code class='haskell'>{}
 </code></pre>
 </td><td>
-<pre><code class='perl'>{"<<":{}}
+<pre><code class='perl'>{
+   "<<" : {}
+}
+
 </code></pre>
 </td><td>
-<pre><code class='python'>{"<<": {}}
+<pre><code class='python'>{
+    "<<": {}
+}
 </code></pre>
 </td><td>
-<pre><code class='ruby'>{}
+<pre><code class='ruby'>{
+}
 </code></pre>
 </td><td>
-<pre><code class=''>{"<<":{}}
+<pre><code class=''>{
+  "<<": {}
+}
 </code></pre>
 </td>
 </tr>
@@ -239,10 +346,15 @@ ConstructorError: could not determine a constructor for the tag 'tag:yaml.org,20
 <pre><code class=''><<: a
 </code></pre>
 </td><td>
-<pre><code class='haskell'>{"<<":"a"}
+<pre><code class='haskell'>{
+    "<<": "a"
+}
 </code></pre>
 </td><td>
-<pre><code class='perl'>{"<<":"a"}
+<pre><code class='perl'>{
+   "<<" : "a"
+}
+
 </code></pre>
 </td><td>
 :x:
@@ -251,10 +363,14 @@ ConstructorError: while constructing a mapping
 expected a mapping or list of mappings for merging, but found scalar
   in "<stdin>", line 1, column 5
 </td><td>
-<pre><code class='ruby'>{"<<":"a"}
+<pre><code class='ruby'>{
+  "<<": "a"
+}
 </code></pre>
 </td><td>
-<pre><code class=''>{"<<":"a"}
+<pre><code class=''>{
+  "<<": "a"
+}
 </code></pre>
 </td>
 </tr>
@@ -271,19 +387,76 @@ b:
 
 </code></pre>
 </td><td>
-<pre><code class='haskell'>{"a":{"k2":"v2","k1":"v1"},"b":{"k3":"v3","k2":"v2","k1":"override"}}
+<pre><code class='haskell'>{
+    "a": {
+        "k2": "v2",
+        "k1": "v1"
+    },
+    "b": {
+        "k3": "v3",
+        "k2": "v2",
+        "k1": "override"
+    }
+}
 </code></pre>
 </td><td>
-<pre><code class='perl'>{"a":{"k2":"v2","k1":"v1"},"b":{"k3":"v3","k1":"override","<<":{"k2":"v2","k1":"v1"}}}
+<pre><code class='perl'>{
+   "a" : {
+      "k2" : "v2",
+      "k1" : "v1"
+   },
+   "b" : {
+      "k1" : "override",
+      "k3" : "v3",
+      "<<" : {
+         "k2" : "v2",
+         "k1" : "v1"
+      }
+   }
+}
+
 </code></pre>
 </td><td>
-<pre><code class='python'>{"a": {"k1": "v1", "k2": "v2"}, "b": {"k1": "override", "k2": "v2", "k3": "v3"}}
+<pre><code class='python'>{
+    "a": {
+        "k1": "v1",
+        "k2": "v2"
+    },
+    "b": {
+        "k1": "override",
+        "k2": "v2",
+        "k3": "v3"
+    }
+}
 </code></pre>
 </td><td>
-<pre><code class='ruby'>{"a":{"k1":"v1","k2":"v2"},"b":{"k1":"override","k2":"v2","k3":"v3"}}
+<pre><code class='ruby'>{
+  "a": {
+    "k1": "v1",
+    "k2": "v2"
+  },
+  "b": {
+    "k1": "override",
+    "k2": "v2",
+    "k3": "v3"
+  }
+}
 </code></pre>
 </td><td>
-<pre><code class=''>{"a":{"k1":"v1","k2":"v2"},"b":{"<<":{"k1":"v1","k2":"v2"},"k1":"override","k3":"v3"}}
+<pre><code class=''>{
+  "a": {
+    "k1": "v1",
+    "k2": "v2"
+  },
+  "b": {
+    "<<": {
+      "k1": "v1",
+      "k2": "v2"
+    },
+    "k1": "override",
+    "k3": "v3"
+  }
+}
 </code></pre>
 </td>
 </tr>
@@ -294,19 +467,40 @@ b:
 - 1_000
 </code></pre>
 </td><td>
-<pre><code class='haskell'>[1000,1000,"1_000"]
+<pre><code class='haskell'>[
+    1000,
+    1000,
+    "1_000"
+]
 </code></pre>
 </td><td>
-<pre><code class='perl'>["1000","+1000","1_000"]
+<pre><code class='perl'>[
+   "1000",
+   "+1000",
+   "1_000"
+]
+
 </code></pre>
 </td><td>
-<pre><code class='python'>[1000, 1000, 1000]
+<pre><code class='python'>[
+    1000,
+    1000,
+    1000
+]
 </code></pre>
 </td><td>
-<pre><code class='ruby'>[1000,1000,1000]
+<pre><code class='ruby'>[
+  1000,
+  1000,
+  1000
+]
 </code></pre>
 </td><td>
-<pre><code class=''>[1000,1000,"1_000"]
+<pre><code class=''>[
+  1000,
+  1000,
+  "1_000"
+]
 </code></pre>
 </td>
 </tr>
@@ -315,19 +509,45 @@ b:
 <pre><code class=''>[8, 08, 0o10, 010]
 </code></pre>
 </td><td>
-<pre><code class='haskell'>[8,8,"0o10",10]
+<pre><code class='haskell'>[
+    8,
+    8,
+    "0o10",
+    10
+]
 </code></pre>
 </td><td>
-<pre><code class='perl'>["8","08","0o10","010"]
+<pre><code class='perl'>[
+   "8",
+   "08",
+   "0o10",
+   "010"
+]
+
 </code></pre>
 </td><td>
-<pre><code class='python'>[8, "08", "0o10", 8]
+<pre><code class='python'>[
+    8,
+    "08",
+    "0o10",
+    8
+]
 </code></pre>
 </td><td>
-<pre><code class='ruby'>[8,"08","0o10",8]
+<pre><code class='ruby'>[
+  8,
+  "08",
+  "0o10",
+  8
+]
 </code></pre>
 </td><td>
-<pre><code class=''>[8,8,8,10]
+<pre><code class=''>[
+  8,
+  8,
+  8,
+  10
+]
 </code></pre>
 </td>
 </tr>
@@ -340,6 +560,7 @@ b:
 </code></pre>
 </td><td>
 <pre><code class='perl'>"Sosa did fine.☺"
+
 </code></pre>
 </td><td>
 <pre><code class='python'>"Sosa did fine.\u263a"

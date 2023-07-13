@@ -5,7 +5,7 @@ from    sys import exit, stderr, stdin
 import  yaml
 
 try:
-    print(json.dumps(yaml.load(stdin)))
+    print(json.dumps(yaml.load(stdin), indent=4))
 except Exception as e:
     print(e.__class__.__name__ + ':', e, file=stderr)
     exit(1)
